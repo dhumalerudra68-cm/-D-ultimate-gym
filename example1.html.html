@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northline Fitness & Wellness | Urban Athletic Club - Brookfield, CA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Syne & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#090a0c',
+              dark: '#111317',
+              card: '#181b22',
+              border: '#262a36',
+              lime: '#ccff00',
+              limeHover: '#b8e600',
+              gray: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom glow and accents */
+    .glow-lime {
+      box-shadow: 0 0 25px rgba(204, 255, 0, 0.25);
+    }
+    .text-glow {
+      text-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+    }
+    .clip-slanted {
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090a0c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262a36;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ccff00;
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-slate-100 font-sans antialiased selection:bg-brand-lime selection:text-black">
+
+  <!-- TOP TICKER BAR -->
+  <div class="bg-brand-lime text-black font-semibold text-xs py-2 px-4 tracking-wider uppercase overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-black animate-pulse"></span>
+        <span>Brookfield's Premier Neighborhood Gym • Est. 2018</span>
+      </div>
+      <div class="flex items-center space-x-6 text-[11px] font-bold">
+        <span><i class="fa-solid fa-clock mr-1"></i> MON–FRI: 5:30 AM – 10:00 PM</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-key mr-1"></i> KEYLESS APP ACCESS OUTSIDE STAFFED HOURS</span>
+        <span><i class="fa-solid fa-phone mr-1"></i> (555) 014-7820</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-brand-lime rounded-lg flex items-center justify-center font-display font-black text-black text-xl group-hover:rotate-6 transition-transform">
+            NL
+          </div>
+          <div>
+            <span class="font-display font-black text-xl tracking-tight text-white block leading-none">
+              NORTHLINE
+            </span>
+            <span class="text-[10px] tracking-widest text-brand-lime font-bold uppercase block mt-1">
+              Fitness & Wellness
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center space-x-8 font-medium text-sm tracking-wide">
+          <a href="#overview" class="text-slate-300 hover:text-brand-lime transition-colors">Overview</a>
+          <a href="#equipment" class="text-slate-300 hover:text-brand-lime transition-colors">Equipment & Zones</a>
+          <a href="#classes" class="text-slate-300 hover:text-brand-lime transition-colors">Class Schedule</a>
+          <a href="#hours" class="text-slate-300 hover:text-brand-lime transition-colors">Hours & Access</a>
+          <a href="#terms" class="text-slate-300 hover:text-brand-lime transition-colors">Membership Terms</a>
+          <a href="#contact" class="text-slate-300 hover:text-brand-lime transition-colors">Location</a>
+        </div>
+
+        <!-- CTA & Phone -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="#schedule-app" class="px-5 py-2.5 rounded-md bg-brand-lime hover:bg-brand-limeHover text-black font-display font-extrabold text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5 glow-lime">
+            Member Portal
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-brand-card focus:outline-none" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-border px-4 pt-3 pb-6 space-y-3">
+      <a href="#overview" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Overview</a>
+      <a href="#equipment" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Equipment & Zones</a>
+      <a href="#classes" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Class Schedule</a>
+      <a href="#hours" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Hours & Access</a>
+      <a href="#terms" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Membership Terms</a>
+      <a href="#contact" class="block py-2 text-slate-300 hover:text-brand-lime font-medium">Location & Contact</a>
+      <div class="pt-4 border-t border-brand-border flex flex-col gap-2">
+        <a href="#contact" class="w-full text-center py-2.5 bg-brand-lime text-black font-display font-bold text-xs uppercase rounded">
+          Contact Front Desk
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-brand-border">
+    <!-- Background Image with Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80" 
+           alt="Northline Fitness Training Facility" 
+           class="w-full h-full object-cover opacity-25 filter grayscale contrast-125 scale-105 transform hover:scale-100 transition-transform duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-lime/10 via-transparent to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-card border border-brand-border">
+            <span class="w-2 h-2 rounded-full bg-brand-lime"></span>
+            <span class="text-xs uppercase font-bold tracking-widest text-slate-300">Neighborhood Fitness • 214 Cedar Ave, Brookfield</span>
+          </div>
+
+          <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white uppercase leading-[0.95]">
+            Engineered For <span class="text-brand-lime text-glow">Real Strength.</span> Built For Life.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
+            Northline Fitness & Wellness is a modern 14,000 sq. ft. training ground for adults of all fitness levels. Experience heavy-duty strength rigs, cardio fleets, expert instructor-led classes, and essential recovery amenities.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#classes" class="px-8 py-4 bg-brand-lime hover:bg-brand-limeHover text-black font-display font-black text-sm uppercase tracking-wider rounded-md glow-lime transition-all transform hover:-translate-y-0.5">
+              View Class Schedule <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#equipment" class="px-8 py-4 bg-brand-card hover:bg-brand-border border border-brand-border text-white font-display font-bold text-sm uppercase tracking-wider rounded-md transition-all">
+              Explore 14,000 Sq. Ft. Facility
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-brand-border/60">
+            <div>
+              <div class="font-display font-extrabold text-2xl sm:text-3xl text-brand-lime">14,000</div>
+              <div class="text-xs uppercase tracking-wider text-slate-400 mt-1">Sq. Ft. Facility</div>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">160</div>
+              <div class="text-xs uppercase tracking-wider text-slate-400 mt-1">Cap. At a Time</div>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-2xl sm:text-3xl text-brand-lime">100%</div>
+              <div class="text-xs uppercase tracking-wider text-slate-400 mt-1">Ground Floor Access</div>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">42+</div>
+              <div class="text-xs uppercase tracking-wider text-slate-400 mt-1">Parking & Bike Racks</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Badge / Live Status -->
+        <div class="lg:col-span-4">
+          <div class="bg-brand-card/90 backdrop-blur border border-brand-border p-6 rounded-xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lime/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex items-center justify-between border-b border-brand-border pb-4 mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-lime">
+                <i class="fa-solid fa-circle-check mr-1.5"></i> Daily Access Status
+              </span>
+              <span class="text-[11px] bg-brand-border px-2 py-0.5 rounded text-slate-300">Brookfield, CA</span>
+            </div>
+
+            <div class="space-y-4 text-sm">
+              <div class="flex justify-between items-center py-1">
+                <span class="text-slate-400">Monday–Friday</span>
+                <span class="font-semibold text-white">5:30 a.m. – 10:00 p.m.</span>
+              </div>
+              <div class="flex justify-between items-center py-1">
+                <span class="text-slate-400">Saturday</span>
+                <span class="font-semibold text-white">7:00 a.m. – 8:00 p.m.</span>
+              </div>
+              <div class="flex justify-between items-center py-1">
+                <span class="text-slate-400">Sunday</span>
+                <span class="font-semibold text-white">8:00 a.m. – 6:00 p.m.</span>
+              </div>
+              <div class="p-3 bg-brand-dark rounded border border-brand-border text-xs text-slate-300 space-y-1">
+                <p class="font-bold text-brand-lime flex items-center">
+                  <i class="fa-solid fa-id-badge mr-1.5"></i> Front Desk Staffing Hours:
+                </p>
+                <p>Weekdays: 7:00 a.m. – 8:00 p.m.</p>
+                <p>Weekends: 8:00 a.m. – 4:00 p.m.</p>
+                <p class="text-slate-400 text-[11px] mt-1 pt-1 border-t border-brand-border/60">
+                  Enter outside staffed hours via official Member App or Key Tag.
+                </p>
+              </div>
+            </div>
+
+            <a href="tel:5550147820" class="mt-5 w-full block text-center py-3 bg-brand-dark hover:bg-brand-border border border-brand-border text-white text-xs font-display font-bold uppercase tracking-wider rounded transition">
+              <i class="fa-solid fa-phone mr-2 text-brand-lime"></i> Call (555) 014-7820
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW & ACCESSIBILITY SECTION -->
+  <section id="overview" class="py-20 bg-brand-dark border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Northline Fitness cardio deck and training facility" 
+                 class="w-full h-[450px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-brand-card/95 border border-brand-border backdrop-blur">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-wheelchair text-2xl text-brand-lime"></i>
+                <div>
+                  <h4 class="font-display font-bold text-white text-sm uppercase">Full Step-Free Accessibility</h4>
+                  <p class="text-xs text-slate-300">Ground-floor entrance, accessible restroom, and accessible private shower.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block text-xs font-display font-bold text-brand-lime uppercase tracking-widest">
+            // Established 2018 in Brookfield, California
+          </div>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-white uppercase leading-tight">
+            A Serious Neighborhood Gym For <span class="text-brand-lime">Every Fitness Level</span>
+          </h2>
+          <p class="text-slate-300 leading-relaxed">
+            Northline Fitness & Wellness was created with a clear objective: provide a clean, high-performance, welcoming training ground where adults can build athletic longevity. We don't do gimmicks or crowded chaos. With a deliberate facility cap of 160 members at any given time, you always have room to train, lift, and recover with dignity.
+          </p>
+
+          <!-- Key Amenities Grid -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+              <div class="w-9 h-9 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime mb-3">
+                <i class="fa-solid fa-square-parking"></i>
+              </div>
+              <h3 class="font-display font-bold text-white text-base">42 Shared Parking Spaces</h3>
+              <p class="text-xs text-slate-400 mt-1">Convenient shared on-site parking plus dedicated bicycle racks right at the entrance.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+              <div class="w-9 h-9 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime mb-3">
+                <i class="fa-solid fa-shower"></i>
+              </div>
+              <h3 class="font-display font-bold text-white text-base">Locker & Changing Suites</h3>
+              <p class="text-xs text-slate-400 mt-1">Dedicated Men's, Women's, and single-user changing rooms, hot showers, and secure lockers.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+              <div class="w-9 h-9 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime mb-3">
+                <i class="fa-solid fa-bottle-water"></i>
+              </div>
+              <h3 class="font-display font-bold text-white text-base">Water Refill Stations</h3>
+              <p class="text-xs text-slate-400 mt-1">Fast, high-flow filtered cold hydration stations situated across the 14,000 sq. ft. floor.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+              <div class="w-9 h-9 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime mb-3">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <h3 class="font-display font-bold text-white text-base">PT Assessment Room</h3>
+              <p class="text-xs text-slate-400 mt-1">Private diagnostic space for personal training movement screens, body metrics, and goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT ARSENAL & FACILITIES -->
+  <section id="equipment" class="py-24 bg-brand-black border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-widest">// Facility & Inventory</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          The 14,000 Sq. Ft. Training Floor
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-4">
+          Every piece of equipment is meticulously chosen, regularly calibrated, and maintained for adult athletes seeking strength, conditioning, and joint longevity.
+        </p>
+      </div>
+
+      <!-- Equipment Category Tabs -->
+      <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+        <div class="inline-flex p-1.5 bg-brand-card rounded-xl border border-brand-border space-x-2" role="tablist">
+          <button onclick="switchTab('cardio')" id="tab-btn-cardio" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider bg-brand-lime text-black transition">
+            Cardio Fleet
+          </button>
+          <button onclick="switchTab('strength')" id="tab-btn-strength" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider text-slate-300 hover:text-white transition">
+            Strength & Lifting
+          </button>
+          <button onclick="switchTab('machines')" id="tab-btn-machines" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider text-slate-300 hover:text-white transition">
+            Selectorized & Cables
+          </button>
+          <button onclick="switchTab('spaces')" id="tab-btn-spaces" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider text-slate-300 hover:text-white transition">
+            Studios & Spaces
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: CARDIO -->
+      <div id="tab-cardio" class="tab-content block">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="font-display font-black text-2xl text-white uppercase">Aerobic Engine Suite</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Our endurance wing is loaded with commercial-grade machines calibrated for low-impact conditioning and high-output cardiovascular training.
+            </p>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-person-running text-brand-lime mr-3"></i> Treadmills
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">14 Units</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-bicycle text-brand-lime mr-3"></i> Stationary Bikes
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">8 Units</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-person-walking text-brand-lime mr-3"></i> Elliptical Trainers
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">6 Units</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-water text-brand-lime mr-3"></i> Rowing Machines
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">4 Units</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-stairs text-brand-lime mr-3"></i> Stair Climbers
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">2 Units</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl overflow-hidden border border-brand-border relative">
+              <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Northline cardio floor treadmills and bikes" 
+                   class="w-full h-[420px] object-cover">
+              <div class="absolute bottom-4 left-4 bg-brand-black/90 px-4 py-2 rounded-lg border border-brand-border">
+                <span class="text-xs font-bold text-brand-lime">14 Treadmills & 8 Stationary Bikes Available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: STRENGTH -->
+      <div id="tab-strength" class="tab-content hidden">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="font-display font-black text-2xl text-white uppercase">Heavy Free Weights & Power Racks</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Equipped for serious lifters, functional athletes, and beginner strength enthusiasts with pristine bumper plates, barbells, and durable platforms.
+            </p>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-dumbbell text-brand-lime mr-3"></i> Dumbbells Range
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">5 to 100 lb</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-bars-progress text-brand-lime mr-3"></i> Squat Racks
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">4 Heavy Racks</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-layer-group text-brand-lime mr-3"></i> Dedicated Lifting Platforms
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">2 Platforms</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-arrows-up-down-left-right text-brand-lime mr-3"></i> Adjustable Benches
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">10 Benches</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                <span class="text-slate-200 text-sm font-medium flex items-center">
+                  <i class="fa-solid fa-shield-halved text-brand-lime mr-3"></i> Smith Machine
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-dark text-brand-lime text-xs font-bold font-display">1 Commercial</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl overflow-hidden border border-brand-border relative">
+              <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Dumbbell and free weight rack at Northline" 
+                   class="w-full h-[420px] object-cover">
+              <div class="absolute bottom-4 left-4 bg-brand-black/90 px-4 py-2 rounded-lg border border-brand-border">
+                <span class="text-xs font-bold text-brand-lime">5 to 100 lb Dumbbells • 4 Squat Racks • 2 Platforms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: MACHINES -->
+      <div id="tab-machines" class="tab-content hidden">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="font-display font-black text-2xl text-white uppercase">Pin-Selected & Functional Arsenal</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Targeted muscle isolation and functional accessory equipment for joint-friendly strength building and mobility training.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-angles-down"></i> Leg Press</div>
+                <div class="text-slate-400">Heavy quad & glute drive</div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-circle"></i> Leg Ext & Leg Curl</div>
+                <div class="text-slate-400">Hamstring & knee stabilizers</div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-shield-cat"></i> Chest Press Machine</div>
+                <div class="text-slate-400">Converging biomechanics</div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-arrow-down-wide-short"></i> Lat Pulldown & Row</div>
+                <div class="text-slate-400">Full posterior chain support</div>
+              </div>
+              <div class="col-span-2 p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-network-wired"></i> Cable Crossover & Adjustable Pulley</div>
+                <div class="text-slate-400">Multi-station adjustable pulley columns with full cable attachments</div>
+              </div>
+              <div class="col-span-2 p-3 bg-brand-card border border-brand-border rounded">
+                <div class="text-brand-lime font-bold mb-1"><i class="fa-solid fa-cubes"></i> Functional Accessories</div>
+                <div class="text-slate-400">Kettlebells, medicine balls, resistance bands, and high-density foam rollers</div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl overflow-hidden border border-brand-border relative">
+              <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Functional training equipment and machines" 
+                   class="w-full h-[420px] object-cover">
+              <div class="absolute bottom-4 left-4 bg-brand-black/90 px-4 py-2 rounded-lg border border-brand-border">
+                <span class="text-xs font-bold text-brand-lime">Cables • Resistance Bands • Kettlebells • Foam Rollers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: SPACES -->
+      <div id="tab-spaces" class="tab-content hidden">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="font-display font-black text-2xl text-white uppercase">Dedicated Spaces & Amenities</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Designed around privacy, hygiene, and accessible everyday comfort. Everything you need before, during, and after training.
+            </p>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 bg-brand-card border border-brand-border rounded-lg flex items-center space-x-3">
+                <i class="fa-solid fa-users-viewfinder text-brand-lime text-lg"></i>
+                <div>
+                  <div class="font-bold text-white">Group Fitness Studio</div>
+                  <div class="text-xs text-slate-400">Acoustically isolated studio with spring-loaded flooring for cycling & yoga.</div>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded-lg flex items-center space-x-3">
+                <i class="fa-solid fa-heart-pulse text-brand-lime text-lg"></i>
+                <div>
+                  <div class="font-bold text-white">Personal Training Assessment Room</div>
+                  <div class="text-xs text-slate-400">Private screening area for biomechanics, mobility tests, and fitness goal roadmaps.</div>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded-lg flex items-center space-x-3">
+                <i class="fa-solid fa-restroom text-brand-lime text-lg"></i>
+                <div>
+                  <div class="font-bold text-white">Men’s, Women’s & Single-User Changing</div>
+                  <div class="text-xs text-slate-400">Lockers, showers, and dedicated step-free accessible restroom & shower.</div>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-card border border-brand-border rounded-lg flex items-center space-x-3">
+                <i class="fa-solid fa-faucet-drip text-brand-lime text-lg"></i>
+                <div>
+                  <div class="font-bold text-white">Hydration Refill Stations</div>
+                  <div class="text-xs text-slate-400">Convenient, touchless filtered water refill stations on the gym floor.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl overflow-hidden border border-brand-border relative">
+              <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Group fitness studio at Northline" 
+                   class="w-full h-[420px] object-cover">
+              <div class="absolute bottom-4 left-4 bg-brand-black/90 px-4 py-2 rounded-lg border border-brand-border">
+                <span class="text-xs font-bold text-brand-lime">Studio & Assessment Rooms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CLASS SCHEDULE -->
+  <section id="classes" class="py-24 bg-brand-dark border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-widest">// Instructor-Led Sessions</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+            Weekly Class Schedule
+          </h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-xl">
+            Most classes last 45–50 minutes. Reservations open 7 days in advance via the member app. Class size is capped for coaching quality.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center space-x-2 text-xs text-slate-400 bg-brand-card p-3 rounded-lg border border-brand-border">
+          <i class="fa-solid fa-bell text-brand-lime"></i>
+          <span>Please cancel at least 2 hours in advance if unable to attend.</span>
+        </div>
+      </div>
+
+      <!-- Day selector tabs -->
+      <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mb-8" id="schedule-days-container">
+        <button onclick="selectDay('monday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-lime text-black transition" data-day="monday">
+          Mon
+        </button>
+        <button onclick="selectDay('tuesday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="tuesday">
+          Tue
+        </button>
+        <button onclick="selectDay('wednesday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="wednesday">
+          Wed
+        </button>
+        <button onclick="selectDay('thursday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="thursday">
+          Thu
+        </button>
+        <button onclick="selectDay('friday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="friday">
+          Fri
+        </button>
+        <button onclick="selectDay('saturday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="saturday">
+          Sat
+        </button>
+        <button onclick="selectDay('sunday')" class="day-btn py-3 px-2 rounded-lg font-display font-bold text-xs uppercase tracking-wider text-center border border-brand-border bg-brand-card text-slate-300 hover:text-white transition" data-day="sunday">
+          Sun
+        </button>
+      </div>
+
+      <!-- Schedule Panels -->
+      <div id="schedule-display" class="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-8 min-h-[280px]">
+        <!-- Dynamic classes will be rendered here via JS -->
+      </div>
+
+      <!-- App Reservation Banner -->
+      <div class="mt-8 p-6 rounded-xl bg-gradient-to-r from-brand-card to-brand-dark border border-brand-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-lime/10 border border-brand-lime flex items-center justify-center text-brand-lime text-2xl">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-white text-base">Northline Member App Reservation</h4>
+            <p class="text-xs text-slate-400">Spots open rolling 7 days out at midnight. Weekly schedule subject to holidays or instructor subs.</p>
+          </div>
+        </div>
+        <button onclick="showAppModal()" class="px-6 py-2.5 rounded bg-brand-lime text-black font-display font-bold text-xs uppercase tracking-wider hover:bg-brand-limeHover transition">
+          Open App Portal
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATING HOURS & ACCESS PROTOCOL -->
+  <section id="hours" class="py-24 bg-brand-black border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-widest">// Facility Access Schedule</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase">
+            Flexible Hours. <br><span class="text-brand-lime">Keyless App Access.</span>
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Train on your own clock. Outside front-desk staffed hours, active members enjoy seamless, secure entry into Northline using either the smartphone membership app or a personalized RFID key tag.
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-5 rounded-xl bg-brand-card border border-brand-border">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-bold text-white text-base">Gym Operating Hours</span>
+                <span class="text-xs px-2.5 py-1 bg-brand-lime/20 text-brand-lime rounded font-bold">160 Max Capacity</span>
+              </div>
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex justify-between border-b border-brand-border/60 pb-1.5">
+                  <span class="text-slate-400">Monday – Friday</span>
+                  <span class="font-semibold text-white">5:30 a.m. – 10:00 p.m.</span>
+                </li>
+                <li class="flex justify-between border-b border-brand-border/60 pb-1.5">
+                  <span class="text-slate-400">Saturday</span>
+                  <span class="font-semibold text-white">7:00 a.m. – 8:00 p.m.</span>
+                </li>
+                <li class="flex justify-between border-b border-brand-border/60 pb-1.5">
+                  <span class="text-slate-400">Sunday</span>
+                  <span class="font-semibold text-white">8:00 a.m. – 6:00 p.m.</span>
+                </li>
+                <li class="flex justify-between pt-1 text-xs text-slate-400 italic">
+                  <span>Public Holidays</span>
+                  <span>Reduced hours, announced in advance</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-xl bg-brand-dark border border-brand-lime/30">
+              <div class="flex items-center space-x-3 mb-2">
+                <i class="fa-solid fa-id-card-clip text-brand-lime text-lg"></i>
+                <h4 class="font-display font-bold text-white text-base">Front Desk Staffing Hours</h4>
+              </div>
+              <p class="text-xs text-slate-300 mb-3">Staff are present to assist with tours, billing, guest waivers, and new sign-ups during these windows:</p>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="bg-brand-card p-2.5 rounded border border-brand-border">
+                  <span class="text-slate-400 block">Weekdays:</span>
+                  <span class="font-bold text-white">7:00 a.m. – 8:00 p.m.</span>
+                </div>
+                <div class="bg-brand-card p-2.5 rounded border border-brand-border">
+                  <span class="text-slate-400 block">Weekends:</span>
+                  <span class="font-bold text-white">8:00 a.m. – 4:00 p.m.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-8 space-y-6">
+            <h3 class="font-display font-bold text-xl text-white uppercase flex items-center">
+              <i class="fa-solid fa-shield-halved text-brand-lime mr-3"></i> Access & Security Protocol
+            </h3>
+            
+            <div class="space-y-4 text-sm text-slate-300">
+              <div class="flex items-start space-x-3">
+                <i class="fa-solid fa-circle-check text-brand-lime mt-1"></i>
+                <div>
+                  <strong class="text-white block font-medium">Electronic Credentials Required</strong>
+                  Members must present an active photo and digital access credential (or key tag) at the turnstile scanner for entry.
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fa-solid fa-circle-check text-brand-lime mt-1"></i>
+                <div>
+                  <strong class="text-white block font-medium">Guest Registration Rules</strong>
+                  All guests must check in with front desk staff during staffed hours, execute a signed liability waiver, and follow gym etiquette.
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fa-solid fa-circle-check text-brand-lime mt-1"></i>
+                <div>
+                  <strong class="text-white block font-medium">Account Good Standing</strong>
+                  Missed payments may temporarily suspend facility access until the membership balance is brought current.
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fa-solid fa-circle-check text-brand-lime mt-1"></i>
+                <div>
+                  <strong class="text-white block font-medium">Parking & Commuting</strong>
+                  42 shared vehicle parking spaces on the property plus convenient bicycle racks directly at the entrance.
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 block">Questions about off-hours access?</span>
+                <span class="text-sm font-bold text-brand-lime">hello@northlinefitness.example</span>
+              </div>
+              <a href="#contact" class="px-4 py-2 bg-brand-lime text-black font-display font-bold text-xs uppercase rounded hover:bg-brand-limeHover transition">
+                Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP TERMS & TRANSPARENT POLICIES -->
+  <section id="terms" class="py-24 bg-brand-dark border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-widest">// Clarity & Fairness</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          Clear Membership Terms
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-4">
+          No predatory lock-ins. We pride ourselves on transparent neighborhood policies designed for mutual respect and safety.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Term Card 1 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-user-lock"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Individual & Non-Transferable</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Memberships are designated strictly for one individual and cannot be sold, transferred, or shared. Every member has their own verified photo profile.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-brand-lime font-bold">
+            <i class="fa-solid fa-shield mr-1"></i> Mandatory digital credential
+          </div>
+        </div>
+
+        <!-- Term Card 2 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-calendar-xmark"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">30 Days’ Notice Cancellation</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Month-to-month memberships offer genuine flexibility with a straightforward 30 days’ written notice required prior to billing cycle termination.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-brand-lime font-bold">
+            <i class="fa-solid fa-arrow-rotate-right mr-1"></i> Simple cancellation process
+          </div>
+        </div>
+
+        <!-- Term Card 3 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">$10/Mo Membership Freeze</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Traveling or busy? Freeze your membership for only $10 per month, for up to 3 months per calendar year. Medical freezes are gladly reviewed with documentation.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-brand-lime font-bold">
+            <i class="fa-solid fa-file-medical mr-1"></i> Medical exemptions honored
+          </div>
+        </div>
+
+        <!-- Term Card 4 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Age 16+ Requirement</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            All members must be at least 16 years of age. Members aged 16–17 must have a parent or legal guardian cosign the membership agreement on file.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-slate-400 font-medium">
+            Guardian verification required
+          </div>
+        </div>
+
+        <!-- Term Card 5 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Billing & Account Standing</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Automated recurring dues keep operations seamless. Any missed payments may temporarily pause turnstile access until the account balance is rectified.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-slate-400 font-medium">
+            Contact desk for payment updates
+          </div>
+        </div>
+
+        <!-- Term Card 6 -->
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-brand-lime/40 transition duration-300">
+          <div class="w-12 h-12 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime text-xl mb-4">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Guest Check-In Policy</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Guests are welcome during staffed hours. All visitors must check in at the desk, present valid government photo ID, execute our waiver, and observe gym rules.
+          </p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 text-[11px] text-slate-400 font-medium">
+            Waiver required upon arrival
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION, CONTACT & TRIAL FORM -->
+  <section id="contact" class="py-24 bg-brand-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <!-- Contact & Business Details -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-widest">// Visit The Gym</span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-white uppercase">
+            Northline Fitness & Wellness
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Stop by during staffed hours for a full tour of the 14,000 sq. ft. facility, meet our fitness instructors, or discuss your training goals.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start space-x-4 p-4 rounded-xl bg-brand-card border border-brand-border">
+              <i class="fa-solid fa-location-dot text-brand-lime text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white text-sm">Facility Address</h4>
+                <p class="text-slate-300 text-xs mt-0.5">214 Cedar Avenue, Brookfield, CA 94000</p>
+                <p class="text-slate-400 text-[11px] mt-1">Ground floor, step-free access • 42 shared parking spots & bike racks</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 p-4 rounded-xl bg-brand-card border border-brand-border">
+              <i class="fa-solid fa-phone text-brand-lime text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white text-sm">Direct Phone</h4>
+                <a href="tel:5550147820" class="text-brand-lime text-xs font-semibold hover:underline mt-0.5 block">
+                  (555) 014-7820
+                </a>
+                <p class="text-slate-400 text-[11px] mt-1">Answered during staffed desk hours</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 p-4 rounded-xl bg-brand-card border border-brand-border">
+              <i class="fa-solid fa-envelope text-brand-lime text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white text-sm">Email Inquiries</h4>
+                <a href="mailto:hello@northlinefitness.example" class="text-brand-lime text-xs font-semibold hover:underline mt-0.5 block">
+                  hello@northlinefitness.example
+                </a>
+                <p class="text-slate-400 text-[11px] mt-1">Website: northlinefitness.example</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Inquiry / Tour Request Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-8 sm:p-10 relative">
+            <h3 class="font-display font-black text-2xl text-white uppercase mb-2">Request A Facility Tour</h3>
+            <p class="text-xs text-slate-400 mb-6">Experience Northline firsthand. Walk the weight room, check out the studio, and get your questions answered.</p>
+
+            <form id="tour-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Full Name</label>
+                  <input type="text" required placeholder="Alex Morgan" class="w-full bg-brand-dark border border-brand-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-lime transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Email Address</label>
+                  <input type="email" required placeholder="alex@example.com" class="w-full bg-brand-dark border border-brand-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-lime transition">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone Number</label>
+                  <input type="tel" placeholder="(555) 000-0000" class="w-full bg-brand-dark border border-brand-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-lime transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Primary Fitness Goal</label>
+                  <select class="w-full bg-brand-dark border border-brand-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-lime transition">
+                    <option>Strength & Free Weights</option>
+                    <option>Instructor-Led Group Classes</option>
+                    <option>Personal Training Assessment</option>
+                    <option>Cardio Endurance & Conditioning</option>
+                    <option>Yoga & Mobility Recovery</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Preferred Tour Time / Questions</label>
+                <textarea rows="3" placeholder="Tell us if you have any preferred visit times during staffed hours..." class="w-full bg-brand-dark border border-brand-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-lime transition"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 bg-brand-lime hover:bg-brand-limeHover text-black font-display font-black text-sm uppercase tracking-wider rounded-lg transition-all glow-lime">
+                Submit Tour Request <i class="fa-solid fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+
+            <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-green-950/80 border border-green-500 text-green-200 text-xs text-center font-medium">
+              Thank you! Your inquiry has been sent to our Brookfield front desk team. We will contact you within 24 hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark border-t border-brand-border py-12 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-brand-border/60">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 bg-brand-lime rounded flex items-center justify-center font-display font-black text-black text-sm">
+            NL
+          </div>
+          <span class="font-display font-extrabold text-white text-base uppercase tracking-tight">
+            NORTHLINE FITNESS & WELLNESS
+          </span>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-slate-300 text-xs">
+          <a href="#overview" class="hover:text-brand-lime">Overview</a>
+          <a href="#equipment" class="hover:text-brand-lime">Equipment</a>
+          <a href="#classes" class="hover:text-brand-lime">Classes</a>
+          <a href="#hours" class="hover:text-brand-lime">Hours</a>
+          <a href="#terms" class="hover:text-brand-lime">Terms</a>
+          <a href="#contact" class="hover:text-brand-lime">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+        <div>
+          © 2018–2026 Northline Fitness & Wellness. 214 Cedar Avenue, Brookfield, CA 94000. All rights reserved.
+        </div>
+        <div class="flex space-x-4">
+          <span>Capacity: 160 Members</span>
+          <span>•</span>
+          <span>14,000 Sq. Ft.</span>
+          <span>•</span>
+          <span>Step-Free Accessible</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR DYNAMIC INTERACTIVITY -->
+  <script>
+    // Mobile navigation toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Equipment Tab Switcher
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-lime', 'text-black');
+        btn.classList.add('text-slate-300');
+      });
+
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      activeBtn.classList.remove('text-slate-300');
+      activeBtn.classList.add('bg-brand-lime', 'text-black');
+    }
+
+    // Class Schedule Data
+    const scheduleData = {
+      monday: [
+        { time: '6:30 a.m.', name: 'Strength Circuit', duration: '45–50 min', tag: 'Strength & Conditioning', desc: 'Full-body barbell and kettlebell station circuit targeting muscular endurance and raw strength.' },
+        { time: '6:00 p.m.', name: 'Yoga Flow', duration: '45–50 min', tag: 'Mobility & Restoration', desc: 'Vinyasa-inspired movement sequence to decompress joints and improve athletic hip/spine mobility.' }
+      ],
+      tuesday: [
+        { time: '7:00 a.m.', name: 'Indoor Cycling', duration: '45–50 min', tag: 'High-Cadence Cardio', desc: 'Interval cycling climbs, sprints, and aerobic threshold training in the group studio.' },
+        { time: '6:15 p.m.', name: 'Core & Mobility', duration: '45–50 min', tag: 'Stability & Core', desc: 'Targeted trunk strength, rotational stability, and targeted foam-rolling hip openers.' }
+      ],
+      wednesday: [
+        { time: '6:30 a.m.', name: 'Strength Circuit', duration: '45–50 min', tag: 'Strength & Conditioning', desc: 'Compound movement ladders featuring squat variations, pull exercises, and core holds.' },
+        { time: '6:00 p.m.', name: 'Pilates Basics', duration: '45–50 min', tag: 'Alignment & Core', desc: 'Low-impact mat Pilates emphasizing postural alignment, pelvic stability, and muscular control.' }
+      ],
+      thursday: [
+        { time: '7:00 a.m.', name: 'Indoor Cycling', duration: '45–50 min', tag: 'High-Cadence Cardio', desc: 'Endurance rides and interval surges designed to elevate cardiovascular capacity.' },
+        { time: '6:15 p.m.', name: 'Yoga Flow', duration: '45–50 min', tag: 'Mobility & Restoration', desc: 'Evening restorative yoga sequence with breathwork and deep hip and shoulder opening.' }
+      ],
+      friday: [
+        { time: '6:00 p.m.', name: 'Full-Body Conditioning', duration: '45–50 min', tag: 'Athletic Conditioning', desc: 'End-of-week metabolic burn using dumbbells, rowers, medicine balls, and bodyweight intervals.' }
+      ],
+      saturday: [
+        { time: '9:00 a.m.', name: 'Beginner Strength', duration: '45–50 min', tag: 'Fundamentals & Lifting', desc: 'Introductory coaching on barbell mechanics, hinge and squat forms, and safe dumbbell lifting.' },
+        { time: '10:15 a.m.', name: 'Stretch & Restore', duration: '45–50 min', tag: 'Recovery & Mobility', desc: 'Passive stretching, band-assisted decompression, and foam roller tissue release for weekend recovery.' }
+      ],
+      sunday: [
+        { time: '10:00 a.m.', name: 'Yoga Flow', duration: '45–50 min', tag: 'Mind & Movement', desc: 'Gentle, invigorating Sunday morning practice for all fitness levels to prepare for the week ahead.' }
+      ]
+    };
+
+    function selectDay(dayKey) {
+      // Update buttons
+      document.querySelectorAll('.day-btn').forEach(btn => {
+        if (btn.getAttribute('data-day') === dayKey) {
+          btn.classList.remove('bg-brand-card', 'text-slate-300');
+          btn.classList.add('bg-brand-lime', 'text-black');
+        } else {
+          btn.classList.remove('bg-brand-lime', 'text-black');
+          btn.classList.add('bg-brand-card', 'text-slate-300');
+        }
+      });
+
+      // Render items
+      const container = document.getElementById('schedule-display');
+      const items = scheduleData[dayKey] || [];
+      
+      let html = `
+        <div class="flex items-center justify-between border-b border-brand-border pb-4 mb-6">
+          <h4 class="font-display font-extrabold text-white text-xl uppercase tracking-wide">
+            ${dayKey.toUpperCase()} SESSIONS
+          </h4>
+          <span class="text-xs bg-brand-dark px-3 py-1 rounded text-brand-lime font-bold">
+            ${items.length} ${items.length === 1 ? 'Class' : 'Classes'} Scheduled
+          </span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+      `;
+
+      items.forEach(c => {
+        html += `
+          <div class="p-5 rounded-xl bg-brand-dark border border-brand-border hover:border-brand-lime/50 transition">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-display font-bold text-brand-lime uppercase tracking-wider">${c.time}</span>
+              <span class="text-[11px] bg-brand-card px-2 py-0.5 rounded text-slate-300">${c.duration}</span>
+            </div>
+            <h5 class="font-display font-black text-xl text-white uppercase">${c.name}</h5>
+            <div class="inline-block text-[11px] font-semibold text-brand-lime/80 mt-1 mb-2">${c.tag}</div>
+            <p class="text-xs text-slate-400 leading-relaxed">${c.desc}</p>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 flex justify-between items-center text-xs">
+              <span class="text-slate-400"><i class="fa-solid fa-mobile-screen mr-1"></i> Book in App (7 days out)</span>
+              <span class="text-brand-lime font-bold">Limited Space</span>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    // Initialize Monday on page load
+    selectDay('monday');
+
+    // Simple Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').classList.remove('hidden');
+      e.target.reset();
+    }
+
+    function showAppModal() {
+      alert("Northline Member App Portal: Reservations for classes open 7 days in advance. Please use your registered member email or scan your key tag to log in.");
+    }
+  </script>
+</body>
+</html>
